@@ -1,0 +1,40 @@
+FIVE_HUNDRED = 500
+ONE_HUNDRED = 100
+FIFTY = 50
+TEN = 10
+
+
+# 500원
+# 100원
+# 50원
+# 10원
+
+print("물품 가격을 입력해주세요.")
+productPrice = int(input())
+# fiveHundredCount = productPrice // FIVE_HUNDRED
+# productPrice = productPrice - (fiveHundredCount * FIVE_HUNDRED)
+#
+# oneHundredCount = productPrice // ONE_HUNDRED
+# productPrice = productPrice - (oneHundredCount * ONE_HUNDRED)
+#
+# fiftyCount = productPrice // FIFTY
+# if fiftyCount > 0:
+#     productPrice = productPrice - (fiftyCount * FIFTY)
+#
+# tenCount = productPrice // TEN
+# productPrice = productPrice - (tenCount * TEN)
+#
+# print("500원 : " + str(fiveHundredCount))
+# print("100원 : " + str(oneHundredCount))
+# print("50원 : " + str(fiftyCount))
+# print("10원 : " + str(tenCount))
+
+
+
+coin_types = [500, 100, 50, 10]
+remainCost = 0
+for coin in coin_types:
+    remainCost += productPrice // coin
+    productPrice %= coin
+
+print(remainCost)
