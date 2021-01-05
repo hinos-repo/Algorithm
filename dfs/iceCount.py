@@ -17,9 +17,9 @@ def dfs(x, y):
         graph[x][y] = 1
 
         dfs(x - 1, y)
-        dfs(x, y - 1)
         dfs(x + 1, y)
         dfs(x, y + 1)
+        dfs(x, y - 1)
         return True
     return False
 
