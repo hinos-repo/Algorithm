@@ -9,9 +9,19 @@ public class LinkedListExample
         {
             mylist.add(i);
         }
-        for (int i = 0; i < mylist.size(); i++)
-        {
-            System.out.println(mylist.get(i));
-        }
+
+        mylist.add(8, 100);
+        mylist.add(3, 100);
+
+        System.out.println(mylist.toString());
+
+        mylist.remove(8);
+        mylist.remove(3);
+
+        System.out.println(mylist.toString());
+
+        mylist.clear();
+
+        System.out.println(mylist.toString());
     }
 }

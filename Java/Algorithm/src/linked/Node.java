@@ -12,16 +12,14 @@ class Node
         next = null;
     }
 
-    public Object getData() {
+    public Object getData()
+    {
         return data;
     }
 
     @Override
     public String toString()
     {
-        return "Node{" +
-                "data=" + data +
-                ", next=" + next +
-                '}';
+        return String.valueOf(data);
     }
 }
