@@ -2,6 +2,7 @@ package test;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Notaion
@@ -18,28 +19,27 @@ public class Notaion
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("값 입력");
-        int sample = scanner.nextInt();
+        int value = scanner.nextInt();
         System.out.println("몇진법?");
         int notaion = scanner.nextInt();
 
-        ArrayList<String> test = new ArrayList<>();
-        while (sample >= notaion)
+        LinkedList<String> linkedList = new LinkedList<>();
+        while (value >= notaion)
         {
             if (notaion == 16)
             {
-                int temp = sample % notaion;
+                int temp = value % notaion;
                 if (temp >= 10)
                 {
                     temp = temp - 10;
-                    test.add(String.valueOf((char)(97+temp)));
+                    linkedList.addFirst(String.valueOf((char)(97+temp)));
                 }
             } else {
-                test.add(String.valueOf((sample % notaion)));
+                linkedList.addFirst(String.valueOf((value % notaion)));
             }
-            sample = (sample / notaion);
+            value = (value / notaion);
         }
-        test.add(String.valueOf(sample));
-        Collections.reverse(test);
-        System.out.println(test);
+        linkedList.addFirst(String.valueOf(value));
+        System.out.println(linkedList);
     }
 }
