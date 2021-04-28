@@ -1,8 +1,5 @@
 package linked;
 
-
-import java.util.LinkedList;
-
 public class MyLinkedList extends AbstractLinked
 {
     private Node head;
@@ -13,23 +10,9 @@ public class MyLinkedList extends AbstractLinked
     @Override
     void clear()
     {
-        System.out.println(head);
-        System.out.println(tail);
-
-        Node node = head;
-        for (int i = 0; i<listSize; i++)
-        {
-            Node temp = node;
-            node = temp.next;
-            temp = null;
-        }
-        listSize = 0;
-
         head = null;
         tail = null;
-
-        System.out.println(head);
-        System.out.println(tail);
+        listSize = 0;
     }
 
     @Override
