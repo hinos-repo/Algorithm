@@ -7,7 +7,7 @@ public class SetExample
     public static void main(String [] args)
     {
         ArrayList<String> arr1 = new ArrayList<>();
-        ArrayList<String> arr2 = new ArrayList<>();
+        ArrayList<String> arr2 = new ArrayList<>(5);
         for (int i = 0; i<10; i++)
         {
             arr1.add(String.valueOf(i));
@@ -42,7 +42,6 @@ public class SetExample
         Set<T> set = new HashSet<T>(15);
         set.addAll(list1);
         set.addAll(list2);
-
         return new ArrayList<T>(set);
     }
 
