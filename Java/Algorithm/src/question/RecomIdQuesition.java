@@ -1,16 +1,14 @@
 package question;
 
-import com.sun.deploy.util.StringUtils;
-
 public class RecomIdQuesition
 {
     public static void main(String [] args)
     {
         System.out.println(solution("...!@BaT#*..y.abcdefghijklm"));
-//        System.out.println(solution("z-+.^."));
-//        System.out.println(solution("=.="));
-//        System.out.println(solution("123_.def"));
-//        System.out.println(solution("abcdefghijklmn.p"));
+        System.out.println(solution("z-+.^."));
+        System.out.println(solution("=.="));
+        System.out.println(solution("123_.def"));
+        System.out.println(solution("abcdefghijklmn.p"));
     }
 
     public static String solution(String new_id)
@@ -20,7 +18,7 @@ public class RecomIdQuesition
 
         char [] array = new_id.toCharArray();
         int continous = 0;
-        for (int i = 0; i<array.length; i++)
+        for (int i = 0; i<new_id.length(); i++)
         {
             if (array[i] == '.')
             {
@@ -66,6 +64,4 @@ public class RecomIdQuesition
         }
         return new_id;
     }
-
-
 }

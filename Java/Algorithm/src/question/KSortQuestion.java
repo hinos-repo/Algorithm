@@ -1,13 +1,8 @@
 package question;
-
-import jdk.management.resource.internal.inst.FileOutputStreamRMHooks;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class KSortQuestion
 {
-
     public static void main(String [] args)
     {
         int [] array = {1, 5, 2, 6, 3, 7, 4};
