@@ -22,25 +22,25 @@ public class 실패율
 
         for(int i = 0; i < N; i++)
         {
-            int failByStage = 0;
-            int playerByStageCount = 0;
+            int failCount = 0;
+            int stageSum = 0;
 
             for(int j = 0; j < stages.length; j++)
             {
                 if(stages[j] != -1)
                 {
-                    playerByStageCount++;
+                    stageSum++;
                 } else {
                     continue;
                 }
                 if(i+1 >= stages[j])
                 {
                     stages[j] = -1;
-                    failByStage++;
+                    failCount++;
                 }
             }
             index[i] = i+1;
-            value[i] = (failByStage / (float)playerByStageCount);
+            value[i] = (failCount / (float)stageSum);
         }
 
         bubbleSort(index, value);
