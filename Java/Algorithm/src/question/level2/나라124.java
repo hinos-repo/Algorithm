@@ -1,4 +1,4 @@
-package question;
+package question.level2;
 
 public class 나라124
 {

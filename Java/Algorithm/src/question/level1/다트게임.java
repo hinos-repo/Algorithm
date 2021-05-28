@@ -1,4 +1,4 @@
-package question;
+package question.level1;
 
 public class 다트게임 {
     public static void main(String[] args) {

@@ -18,10 +18,12 @@ public class ArrayCopy
         int [] copy = {5, 6, 7, 8};
         int [] copy2 = {5, 6, 7, 8};
         // 5 6 3 4
-        System.arraycopy(org, 2, copy, 1, 1);
-        System.arraycopy(org, 2, copy2, 1, 2);
-        System.out.println(result(copy));
-        System.out.println(result(copy2));
+//        System.arraycopy(org, 2, copy, 1, 1);
+//        System.arraycopy(org, 2, copy2, 1, 2);
+//        System.out.println(result(copy));
+//        System.out.println(result(copy2));
+
+        System.out.println(test(5));
     }
 
     private static String result(int [] data)
@@ -36,5 +38,15 @@ public class ArrayCopy
             }
         }
         return result;
+    }
+
+    private static int test(int value)
+    {
+        if (value == 1)
+        {
+            return 1;
+        } else {
+            return value * test(value-1);
+        }
     }
 }

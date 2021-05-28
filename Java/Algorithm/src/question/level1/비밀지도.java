@@ -1,4 +1,4 @@
-package question;
+package question.level1;
 
 import java.util.Collections;
 import java.util.LinkedList;

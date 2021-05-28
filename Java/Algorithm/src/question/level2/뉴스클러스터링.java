@@ -1,4 +1,4 @@
-package question;
+package question.level2;
 
 import java.util.*;
 import java.util.regex.Pattern;
@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
  * https://programmers.co.kr/learn/courses/30/lessons/17677?language=java
  * */
 
-public class MultiSetQuestion
+public class 뉴스클러스터링
 {
     public static void main(String [] args)
     {

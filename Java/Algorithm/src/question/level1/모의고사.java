@@ -1,4 +1,4 @@
-package question;
+package question.level1;
 
 import java.util.ArrayList;
 import java.util.Collections;
