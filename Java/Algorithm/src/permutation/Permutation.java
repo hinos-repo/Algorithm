@@ -1,47 +1,88 @@
 package permutation;
 
-import test.MyUtil;
 
-import static jdk.nashorn.internal.objects.Global.print;
+import test.MyUtil;
 
 public class Permutation
 {
-    private static int n = 3;                           // 전체 개수
-    private static int r = 3;                           // 찾을 개수
-    private static int[] list = {1,2,3};            // 전체 리스트
-    private static int[] answer = new int[r];           // 찾는 리스트
-    private static boolean[] check = new boolean[n];    // check
-
     public static void main(String[] args)
     {
-        순열(0);
+        int[] arr = {1, 2, 3}; //데이터
+        int n = 3; // 데이터 사이즈
+        int r = 3; // 찾을 데이터
+        int[] output = new int[n]; // 임시배열
+
+        boolean[] visited = new boolean[n]; // 방문 여부
+
+        perm3(arr, output, visited, 0);
     }
 
-    private static void 순열(int depth)
+    static void perm2(int [] arr, int [] output, boolean[] visited, int depth, int n, int r)
     {
-        if(r == depth)
+        if (depth == r)
         {
-            print(answer);
+            System.out.println(MyUtil.toString(output));
             return;
         }
 
-        for (int index = 0; index < n; index++)
+        for (int i = 0; i < n; i++)
         {
-            if(!check[index])
+            if (!visited[i])
             {
-                check[index] = true;
-                answer[depth] = list[index];
-                순열(depth + 1);
-                check[index] = false;
+                visited[i] = true;
+                output[depth] = arr[i];
+                perm2(arr, output, visited, depth+1, n, r);
+                output[depth] = 0;
+                visited[i] = false;
             }
         }
     }
 
-    private static void print(int[] answer)
+    static void perm3(int [] arr, int [] output, boolean [] visited, int depth)
     {
-        for (int i :answer) {
-            System.out.print(i + " ");
+        if (depth == arr.length)
+        {
+            System.out.println(MyUtil.toString(output));
+            return;
         }
+
+        for (int i = 0; i < arr.length; i++)
+        {
+            if (!visited[i])
+            {
+                output[depth] = arr[i];
+                visited[i] = true;
+                perm3(arr, output, visited, depth+1);
+                visited[i] = false;
+            }
+        }
+    }
+
+    static void perm(int[] arr, int[] output, boolean[] visited, int depth, int n, int r)
+    {
+        print(output, r);
+        if (depth == r)
+        {
+            return;
+        }
+
+        for (int i=0; i<n; i++)
+        {
+            if (visited[i] != true)
+            {
+                visited[i] = true;
+                output[depth] = arr[i];
+                perm(arr, output, visited, depth + 1, n, r);
+                output[depth] = 0; // 이 줄은 없어도 됨
+                visited[i] = false;
+            }
+        }
+    }
+
+    // 배열 출력
+    static void print(int[] arr, int r) {
+        for (int i = 0; i < r; i++)
+            System.out.print(arr[i] + " ");
         System.out.println();
     }
 
