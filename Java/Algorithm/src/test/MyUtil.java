@@ -20,6 +20,38 @@ public final class MyUtil
         return new String(builder);
     }
 
+    public static String toString(char [] result)
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.append("[");
+        for (int i = 0; i<result.length; i++)
+        {
+            builder.append(result[i]);
+            if (i < result.length-1)
+            {
+                builder.append(", ");
+            }
+        }
+        builder.append("]");
+        return new String(builder);
+    }
+
+    public static String toString(String [] result)
+    {
+        StringBuilder builder = new StringBuilder();
+        builder.append("[");
+        for (int i = 0; i<result.length; i++)
+        {
+            builder.append(result[i]);
+            if (i < result.length-1)
+            {
+                builder.append(", ");
+            }
+        }
+        builder.append("]");
+        return new String(builder);
+    }
+
     public static String toString(long [] result)
     {
         StringBuilder builder = new StringBuilder();
